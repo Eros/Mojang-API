@@ -23,6 +23,8 @@ class MojangStatusAPI {
         website = Status.Issues;
         break;
       case 'green':
+        website = Status.Fine;
+        break;
       default:
       website = Status.Unobtained;
         website = Status.Fine;
