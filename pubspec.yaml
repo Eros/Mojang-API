@@ -1,0 +1,8 @@
+name: mojang_api
+description: An asynchronous wrapper for the Mojang API
+version: 0.0.1
+environment:
+  sdk: '>=2.0.0 <3.0.0'
+repository: https://github.com/Eros/Hypixel-Dart
+dependencies:
+  http: ^0.12.2
