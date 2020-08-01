@@ -12,7 +12,27 @@ class MojangAPI {
   }
 
   static Future<String> uuidForName(String name) async {
-    var response = await http.get(BASE + "users/profiles/minecraft/${name}?at=${now}");
+    var response = await http.get(BASE + 'users/profiles/minecraft/${name}?at=${now}');
+    return response.body;
+  }
+
+  static Future<String> uuidForNames(String names) async {
+    var response = await http.get(BASE + '/profiles/minecraft/${names}');
+    return response.body;
+  }
+
+  static Future<String> nameHistoryForUuid(String uuid) async {
+    var response = await http.get(BASE + '/user/profiles/${uuid}/names');
+    return response.body;
+  }
+
+  static Future<String> nameHistoryForName(String name) async {
+    var response = await http.get(BASE + '/user/profiles/${uuidForName(name)}/names');
+    return response.body;
+  }
+
+  static Future<String> profileForUUid(String uuid) async {
+    var response = await http.get('https://sessionserver.mojang.com/session/minecraft/profiles/${uuid}');
     return response.body;
   }
 
